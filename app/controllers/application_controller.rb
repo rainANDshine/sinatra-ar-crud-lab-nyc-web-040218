@@ -33,7 +33,7 @@ class ApplicationController < Sinatra::Base
 
   post '/posts' do
     Post.create(name: params[:name], content: params[:content])
-    erb :new
+    erb :index
   end
 
   delete '/posts/:id/delete' do
