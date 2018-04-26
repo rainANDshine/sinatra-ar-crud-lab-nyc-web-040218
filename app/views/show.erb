@@ -1,2 +1,7 @@
 <h1>Show post</h1>
 <p><%= @post %></p>
+
+<form method="post" action="/posts/#{params[:id]}/delete">
+  <input type="hidden" id="hidden" name="_method" value="delete" />
+  <%= @post.destroy %>
+</form>
