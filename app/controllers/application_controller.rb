@@ -33,12 +33,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    Post.create(name: params[:name], content: params[:content])
+    Post.create(params)
     redirect to '/posts'
   end
 
   patch '/posts/:id' do
-    @post = Post.update(name: params[:name], content: params[:content])
+    @post = Post.update(params)
     erb :show
   end
 
